@@ -1,0 +1,22 @@
+.App {
+  box-sizing: border-box;
+  text-align: center;
+  margin: auto;
+  width: 245px;
+  /* display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; */
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+gap: 0px;
+gap: 0px;
+
+}
+
+
+
+
+
