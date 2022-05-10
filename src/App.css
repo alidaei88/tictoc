@@ -1,13 +1,26 @@
-.App {
+body{
+  margin: 0;
+}
+
+.App{
   box-sizing: border-box;
-  text-align: center;
+  height: 100vh;
+  /* text-align: center; */
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+}
+
+.board {
+
   width: 245px;
   /* display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center; */
-
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(3, 1fr);

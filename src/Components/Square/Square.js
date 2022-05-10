@@ -2,7 +2,7 @@ import './Square.css';
 
 const Square = ({value, clickHandle, index}) => {
     return(
-        <div className="square" onClick={() => clickHandle(index)} >
+        <div className={`square ${value === "X" ? "xStyle" : "oStyle"}`} onClick={() => clickHandle(index)} >
                 {value}
         </div>
     )
