@@ -10,12 +10,9 @@
     margin: 3px;
 }   
 
-.square {
-   
-}
 
 .square:hover {
-    box-shadow: 2px 2px 10px 5px  rgb(176, 174, 174);
+    box-shadow: 2px 2px 15px 3px  rgb(134, 131, 131);
 }
 
 .square-inner {

@@ -29,6 +29,47 @@ gap: 0px;
 
 }
 
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.score {
+  width: 50%;
+  margin: auto;
+  padding: 5vh;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.xScore{
+
+  text-align: center;
+  width: 10vh;
+  background-color: #43a7c1;
+  padding: 2vh;
+  color: white;
+  border-radius: 6px;
+}
+
+.oScore {
+  text-align: center;
+  width: 10vh;
+  background-color: #d55336;
+  padding: 2vh;
+  color: white;
+  border-radius: 6px;
+
+}
+
+.resetBtn {
+  background-color: white;
+  cursor: pointer;
+}
 
 
 
