@@ -20,7 +20,7 @@ function App() {
       setPlayer(prev => prev === "X" ? "O" : "X")
       whoWine(updatedSquares)
     }
-    console.log("player turn:",player)
+    console.log("player turn:", player)
   }
 
   function whoWine(squares) {
@@ -36,35 +36,42 @@ function App() {
       [2, 4, 6],
     ];
     if (squares.every(item => item !== null)) {
-       setWinner("")
-       setResultDisplay(true)
-       setTimeout(() => {
-         setSquares(Array(9).fill(null))
-         setResultDisplay(false)
+      setWinner("")
+      setResultDisplay(true)
+      setTimeout(() => {
+        setSquares(Array(9).fill(null))
+        setResultDisplay(false)
 
-      }, 1500);
+      }, 500);
 
     } else {
       for (let i = 0; i < lines.length; i++) {
         let [a, b, c] = lines[i];
-        console.log(a,b,c)
-        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c] ) {
-            setWinner( squares[a] );
-            squares[0] === "X" ? setXScore(() => xScore+1) : setOScore(() => oScore+1);
-            setResultDisplay(true);
+        console.log(a, b, c)
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+          setWinner(squares[a]);
+          squares[0] === "X" ? setXScore(() => xScore + 1) : setOScore(() => oScore + 1);
+          setResultDisplay(true);
+          squares[0] === "X" ? setSquares(Array(9).fill("X")) : setSquares(Array(9).fill("O"));
+          setTimeout(() => {
+            setSquares(Array(9).fill(null))
+            setResultDisplay(false)
+          }, 500);
 
-            setTimeout(() => {
-              setSquares(Array(9).fill(null))
-              setResultDisplay(false)
-            }, 1500);
-
-            console.log("squares[a]:",squares[a]);
+          console.log("squares[a]:", squares[a]);
         }
       }
     }
   }
 
-  console.log("winner:",winner)
+  const resetHandler = () => {
+    setSquares(Array(9).fill(null));
+    setResultDisplay(false);
+    setOScore(0);
+    setXScore(0);
+  }
+
+  console.log("winner:", winner)
   return (
     <div className="App">
       <h1 style={{ color: 'white', fontSize: 48 }}>Tic Toc Toe</h1>
@@ -75,13 +82,13 @@ function App() {
         }
       </div>
 
-      <div className={`${resultDisplay ? "show" :  "hide"}`}>
-      {
-      winner ?
-         <h3 style={{ color: "green" }}> player {winner} Wined</h3>
-        : 
-          <h3 style={{ color: "white" }}> DRAW!</h3>
-      }
+      <div className={`${resultDisplay ? "show" : "hide"}`}>
+        {
+          winner ?
+            <h3 style={{ color: "green" }}> player {winner} is Winner</h3>
+            :
+            <h3 style={{ color: "white" }}> DRAW! </h3>
+        }
       </div>
 
       <dive className="score">
@@ -89,7 +96,7 @@ function App() {
           {xScore}
         </div>
         <div className='reset'>
-          <button className='resetBtn' />
+          <button className='resetBtn' onClick={resetHandler}>Reset</button>
         </div>
         <div className='oScore'>
           {oScore}

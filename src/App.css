@@ -40,6 +40,7 @@ gap: 0px;
 .score {
   width: 50%;
   margin: auto;
+  margin-top: 5vh;
   padding: 5vh;
   display: flex;
   justify-content: space-between;
@@ -66,9 +67,18 @@ gap: 0px;
 
 }
 
+.reset{
+  text-align: center;
+}
+
 .resetBtn {
   background-color: white;
   cursor: pointer;
+  padding: 2vh 5vh;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 21px;
 }
 
 
