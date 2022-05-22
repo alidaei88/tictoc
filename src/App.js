@@ -50,9 +50,9 @@ function App() {
         console.log(a, b, c)
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
           setWinner(squares[a]);
-          squares[0] === "X" ? setXScore(() => xScore + 1) : setOScore(() => oScore + 1);
+          squares[a] === "X" ? setXScore(() => xScore + 1) : setOScore(() => oScore + 1);
           setResultDisplay(true);
-          squares[0] === "X" ? setSquares(Array(9).fill("X")) : setSquares(Array(9).fill("O"));
+          squares[a] === "X" ? setSquares(Array(9).fill("X")) : setSquares(Array(9).fill("O"));
           setTimeout(() => {
             setSquares(Array(9).fill(null))
             setResultDisplay(false)
